@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+:root{
+    --colorWhite: #fff;
+    --colorNeutralCool: #f9f9f9;
+    --colorNeutralWarm: #f2f0eb;
+    --colorCeramic: #edebe9;
+    --colorBlack: #000;
+    --colorGreenStarbucks: #006241;
+    --colorGreenApron: #00a862;
+    --colorGreenAccent: #00754a;
+    --colorGreenLight: #d4e9e2;
+    --colorGreenLightSecondary: rgba(212,233,226,0.33);
+    --colorHouseGreen: #1e3932;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.4;
+    color: #000;
+}
+
+img{
+    max-width: 100%;
+}
+
+a {
+    color: #000;
+}
+  
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li{
+    padding: 0;
+    margin: 0;
+}
+
+.btn{
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 8px 15px;
+}
+
+.btn-outline-dark{
+    border: 1px solid var(--colorBlack);
+    color: var(--colorBlack);
+    background-color: var(--colorWhite);
+    font-weight: 600;
+}
+
+.btn-outline-light{
+    border: 1px solid var(--colorWhite);
+    color: var(--colorBlack);
+    background-color: transparent;
+    font-weight: 600;
+}
+
+.btn-dark{
+    border: 1px solid var(--colorBlack);
+    color: var(--colorWhite);
+    background-color: var(--colorBlack);
+    font-weight: 600;
+}
+
+.space{
+    margin:0 5px;
+}
+
+.btn:hover{
+    opacity: 0.7;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+}
+
+.marker{
+    width: 25px;
+    height: 25px;
+    fill:var(--colorBlack);
+    position: relative;
+    top: 8px;
+}
+
+.find__store:hover, .find__store .marker:hover{
+    color:var(--colorGreenAccent);
+    fill: var(--colorGreenAccent);
+}
+
+/* Hamburger Menu Icon */
+.hamburger {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    background: none;
+    border: none;
+    z-index: 30;
+    transition: all 0.25s;
+    display: none;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: #333;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+    transform: translateY(7px);
+}
+  
+.hamburger-bottom {
+    transform: translateY(14px);
+}
+
+.open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+  }
+  
+.open .hamburger-middle {
+    display: none;
+}
+
+.open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+
+/* NavBar */
+
+.navbar{
+    width: 100%;
+    height: auto;
+    background: var(--colorWhite);
+    padding: 20px;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%),
+    0 0 2px rgb(0 0 0 / 7%);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+
+.navbar a:hover{
+    color:var(--colorGreenAccent);
+}
+
+.nav-container{
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-left{
+    flex: 1;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+.navbar-left li, .navbar-right li{
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.navbar-left li:first-child{
+    margin-left: 30px;
+}
+
+.navbar-left li a, .navbar-right li a{
+    text-decoration: none;
+}
+
+.align-icon{
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right{
+    display: flex;
+    align-items: center;
+}
+
+.mobile-nav{
+    display: none;
+}
+
+.nav-hidden{
+    transform: translateX(100%);
+}
+
+
+@media(max-width:768px){
+
+    .hamburger{
+        display: block;
+    }
+
+    .navbar-right, .navbar-left{
+        display: none;
+    }
+
+    .mobile-nav{
+        display: block;
+        position: fixed;
+        top:85px;
+        right: 0px;
+        margin-top: 10px;
+        background-color: var(--colorWhite);
+        padding: 10px 20px;
+        width: 80%;
+        font-size: 20px;
+        height: 100%;
+        transition: all 0.5s;
+        box-shadow: inset 0 4px 3px -3px rgb(0 0 0 / 10%),
+    inset 0 4px 2px -2px rgb(0 0 0 / 7%);
+    }
+
+    .mobile__find__store{
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .align-icon a:hover{
+        color: var(--colorGreenAccent);
+    }
+    
+    .line{
+        background-color: var(--colorNeutralWarm);
+        color: var(--colorNeutralWarm);
+        width: 80% auto;
+        height: 2px;
+    }
+
+    .mobile-navbar a{
+        text-decoration: none;
+    }
+
+    .mobile-navbar li{
+        margin: 20px 0;
+    }
+}
